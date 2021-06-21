@@ -1,0 +1,167 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 1.6;
+    font-size: 20px;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #0070f3;
+}
+nav a {padding: 5px 15px;}
+nav a:hover {
+    text-decoration: underline;
+    background-color: #CFD8DC;
+    transition: .5s all;
+}
+h1, h2, h3, h4 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: justify;
+}
+h2 {
+    font-size: 26px;
+}
+h3 {
+    font-size: 22px;
+    text-decoration: underline;
+}
+h4 {
+    font-size: 20px;
+}
+li {text-align: justify}
+img {
+    max-width: 100%;
+    display: block;
+    z-index: -1;
+}
+figcaption {
+    text-align: center;
+    font-size: 16px;
+}
+p {
+    text-align: justify;
+}
+li {
+    list-style-type: none;
+}
+footer {
+    margin-top: 15%;
+}
+footer a {
+    font-size: 20px !important;
+}
+#menu__toggle {display: none}
+.menu__box {
+    display: flex;
+}
+.menu__box a {
+    margin-left: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+@media screen and (max-width: 736px) {
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    h4 {
+        font-size: 26px;
+    }
+    .menu__box a {margin-left: 0px}
+    #menu__toggle {
+        opacity: 0;
+    }
+    .menu__btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+    .menu__btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    .menu__btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: #ECEFF1;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .menu__item:hover {
+        background-color: #CFD8DC;
+    }
+    #menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu__toggle:checked ~ .menu__box {
+        visibility: visible;
+        left: 0;
+    }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        transition-duration: .25s;
+    }
+    .menu__box {
+        transition-duration: .25s;
+    }
+    .menu__item {
+        transition-duration: .25s;
+    }
+}
